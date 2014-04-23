@@ -1,5 +1,5 @@
 /*
- Highstock JS v1.3.10 (2014-03-10)
+ Highstock JS v2.0.0 (2014-04-22)
  Plugin for displaying a message when there is no data visible in chart.
 
  (c) 2010-2014 Highsoft AS
