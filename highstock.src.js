@@ -6082,6 +6082,9 @@ Highcharts.PlotLineOrBand.prototype = {
 			path = axis.getPlotBandPath(from, to, options);
 			if (color) {
 				attribs.fill = color;
+				if (options.opacity) {
+					attribs['fill-opacity'] = options.opacity;
+				}
 			}
 			if (options.borderWidth) {
 				attribs.stroke = options.borderColor;
