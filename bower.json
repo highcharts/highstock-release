@@ -1,9 +1,9 @@
 {
   "name": "highstock",
-  "version": "v2.0.1",
+  "version": "v2.0.3",
   "main": [
     "highstock.js",
     "highcharts-more.js",
-    "modules/exporting.src.js"
+    "modules/exporting.js"
   ]
 }
