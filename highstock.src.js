@@ -2828,7 +2828,7 @@ SVGElement.prototype = {
 			titleNode = doc.createElementNS(SVG_NS, 'title');
 			this.element.appendChild(titleNode);
 		}
-		titleNode.textContent = pick(value, '').replace(/<[^>]*>/g, ''); // #3276
+		titleNode.textContent = (String(pick(value), '')).replace(/<[^>]*>/g, ''); // #3276 #3895
 	},
 	textSetter: function (value) {
 		if (value !== this.textStr) {
@@ -14279,7 +14279,8 @@ Series.prototype = {
 			zoneAxis = this.zoneAxis || 'y',
 			axis = this[zoneAxis + 'Axis'],
 			reversed = axis.reversed,
-			horiz = axis.horiz;
+			horiz = axis.horiz,
+			ignoreZones = false;
 
 		if (zones.length && (graph || area)) {
 			// The use of the Color Threshold assumes there are no gaps
@@ -14291,6 +14292,10 @@ Series.prototype = {
 			each(zones, function (threshold, i) {
 				translatedFrom = pick(translatedTo, (reversed ? (horiz ? chart.plotWidth : 0) : (horiz ? 0 : axis.toPixels(axis.min))));
 				translatedTo = mathRound(axis.toPixels(pick(threshold.value, axis.max), true));
+
+				if (ignoreZones) {
+					translatedFrom = translatedTo = axis.toPixels(axis.max);
+				}
 
 				if (axis.isXAxis) {
 					clipAttr = {
@@ -14345,6 +14350,8 @@ Series.prototype = {
 						series['colorArea' + i].clip(clips[i]);
 					}
 				}
+				// if this zone extends out of the axis, ignore the others
+				ignoreZones = threshold.value > axis.max;
 			});
 			this.clips = clips;
 		}
@@ -19175,7 +19182,6 @@ wrap(Series.prototype, 'getSegments', function (proceed) {
 	});
 	
 	wrap(Axis.prototype, 'init', function (proceed, chart, userOptions) {
-
 		// Force Axis to be not-ordinal when breaks are defined
 		if (userOptions.breaks && userOptions.breaks.length) {
 			userOptions.ordinal = false;
@@ -19226,6 +19232,17 @@ wrap(Series.prototype, 'getSegments', function (proceed) {
 				}
 
 				return nval;
+			};
+
+			this.setExtremes = function (newMin, newMax, redraw, animation, eventArguments) {
+				// If trying to set extremes inside a break, extend it to before and after the break ( #3857 )
+				while (this.isInAnyBreak(newMin)) {
+					newMin -= this.closestPointRange;
+				}				
+				while (this.isInAnyBreak(newMax)) {
+					newMax -= this.closestPointRange;
+				}
+				Axis.prototype.setExtremes.call(this, newMin, newMax, redraw, animation, eventArguments);
 			};
 
 			this.setAxisTranslation = function (saveOld) {
