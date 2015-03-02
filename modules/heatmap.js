@@ -1,5 +1,5 @@
 /*
- Highstock JS v2.1.2 (2015-02-27)
+ Highstock JS v2.1.3 (2015-02-27)
 
  (c) 2011-2014 Torstein Honsi
 

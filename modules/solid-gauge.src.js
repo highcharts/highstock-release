@@ -1,5 +1,5 @@
 /**
- * @license  Highstock JS v2.1.2 (2015-02-27)
+ * @license  Highstock JS v2.1.3 (2015-02-27)
  * Solid angular gauge module
  *
  * (c) 2010-2014 Torstein Honsi

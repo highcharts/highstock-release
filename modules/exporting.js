@@ -1,5 +1,5 @@
 /*
- Highstock JS v2.1.2 (2015-02-27)
+ Highstock JS v2.1.3 (2015-02-27)
  Exporting module
 
  (c) 2010-2014 Torstein Honsi
