@@ -2,9 +2,9 @@
   "name": "highstock-release",
   "description": "Official shim repo for Highstock releases.",
   "homepage": "http://www.highcharts.com",
-  "version": "2.1.5",
-  "repository" : { 
-    "type" : "git",
-    "url" : "https://github.com/highslide-software/highstock-release"
+  "version": "v2.1.6",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/highslide-software/highstock-release"
   }
 }
