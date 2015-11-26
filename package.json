@@ -6,6 +6,6 @@
   "main": "highstock.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/highslide-software/highstock-release"
+    "url": "https://github.com/highcharts/highstock-release"
   }
 }
