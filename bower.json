@@ -1,6 +1,6 @@
 {
   "name": "highstock",
-  "version": "v4.2.2",
+  "version": "v4.2.3",
   "main": [
     "highstock.js",
     "highcharts-more.js",
