@@ -2,7 +2,7 @@
   "name": "highstock-release",
   "description": "Official shim repo for Highstock releases.",
   "homepage": "http://www.highcharts.com",
-  "version": "v5.0.5",
+  "version": "v5.0.6",
   "main": "highstock.js",
   "repository": {
     "type": "git",
