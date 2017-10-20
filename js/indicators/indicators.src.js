@@ -1,5 +1,5 @@
 /**
- * @license  Highcharts JS v6.0.1 (2017-10-05)
+ * @license  Highcharts JS v6.0.2 (2017-10-20)
  *
  * Indicator series type for Highstock
  *
@@ -41,7 +41,7 @@
              * @excluding
              * 			allAreas,colorAxis,compare,compareBase,joinBy,keys,stacking,
              * 			showInNavigator,navigatorOptions,pointInterval,pointIntervalUnit,
-             *			pointPlacement,pointRange,pointStart
+             *			pointPlacement,pointRange,pointStart,joinBy
              * @optionparent plotOptions.sma
              */
             {

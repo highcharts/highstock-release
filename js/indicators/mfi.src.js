@@ -1,5 +1,5 @@
 /**
- * @license  Highcharts JS v6.0.1 (2017-10-05)
+ * @license  Highcharts JS v6.0.2 (2017-10-20)
  *
  * Money Flow Index indicator for Highstock
  *
@@ -74,7 +74,7 @@
                      * For example using OHLC data, volumeSeriesID='volume' means 
                      * the indicator will be calculated using OHLC and volume values.
                      * 
-                     * @type {Number}
+                     * @type {String}
                      * @since 6.0.0
                      * @product highstock
                      */
