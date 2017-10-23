@@ -1,5 +1,6 @@
 {
   "name": "highstock",
   "version": "6.0.2",
-  "main": "highstock.js"
+  "main": "highstock.js",
+  "license": "https://www.highcharts.com/license"
 }
