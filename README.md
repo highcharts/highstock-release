@@ -1,6 +1,7 @@
 highstock-release
 =================
 
-Official shim repo for Highstock releases
+This distribution package has been deprecated.
 
-This repo only reflects official versions of Highstock. For bug reporting, please use the [highcharts.com](https://github.com/highslide-software/highcharts.com) working repo.
+For NPM users please use the [highcharts](https://www.npmjs.com/package/highcharts) package.
+For bug reporting, please use the [highcharts](https://github.com/highcharts/highcharts) working repo.
