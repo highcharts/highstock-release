@@ -36814,6 +36814,7 @@
             clickButton: function(i, redraw) {
                 var rangeSelector = this,
                     chart = rangeSelector.chart,
+                    globalOptions = H.defaultOptions.global,
                     rangeOptions = rangeSelector.buttonOptions[i],
                     baseAxis = chart.xAxis[0],
                     unionExtremes = (chart.scroller && chart.scroller.getUnionExtremes()) || baseAxis || {},
@@ -36889,7 +36890,7 @@
                             });
                             redraw = false;
                         }
-                        ytdExtremes = rangeSelector.getYTDExtremes(dataMax, dataMin, useUTC);
+                        ytdExtremes = rangeSelector.getYTDExtremes(dataMax, dataMin, globalOptions.useUTC);
                         newMin = rangeMin = ytdExtremes.min;
                         newMax = ytdExtremes.max;
 
@@ -37025,6 +37026,7 @@
             updateButtonStates: function() {
                 var rangeSelector = this,
                     chart = this.chart,
+                    globalOptions = H.defaultOptions.global,
                     baseAxis = chart.xAxis[0],
                     actualRange = Math.round(baseAxis.max - baseAxis.min),
                     hasNoData = !baseAxis.hasVisibleSeries,
@@ -37032,7 +37034,7 @@
                     unionExtremes = (chart.scroller && chart.scroller.getUnionExtremes()) || baseAxis,
                     dataMin = unionExtremes.dataMin,
                     dataMax = unionExtremes.dataMax,
-                    ytdExtremes = rangeSelector.getYTDExtremes(dataMax, dataMin, useUTC),
+                    ytdExtremes = rangeSelector.getYTDExtremes(dataMax, dataMin, globalOptions.useUTC),
                     ytdMin = ytdExtremes.min,
                     ytdMax = ytdExtremes.max,
                     selected = rangeSelector.selected,
