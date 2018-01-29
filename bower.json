@@ -1,5 +1,5 @@
 {
   "name": "highstock",
   "version": "v5.0.14",
-  "main": "highstock.js"
+  "main": "highstock.src.js"
 }
